@@ -1,0 +1,9 @@
+FROM alpine
+
+VOLUME ["/vpn"]
+
+RUN apk --no-cache --no-progress upgrade && \
+    apk add curl openssl mysql-client tini bash git openssh netcat-openbsd 
+
+ENTRYPOINT ["/sbin/tini"]
+
