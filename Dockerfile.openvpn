@@ -1,0 +1,12 @@
+FROM alpine
+
+# Source: https://github.com/ekristen/docker-openvpn-client
+# Based on: https://github.com/dperson/openvpn-client
+# NOTE: This based on project is more complete and we would want to switch to that.
+
+VOLUME ["/vpn"]
+
+RUN apk add --no-cache openvpn
+
+ENTRYPOINT ["openvpn"]
+
